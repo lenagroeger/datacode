@@ -1,0 +1,77 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Excel Lab</title>
+    <link rel="stylesheet" href="exercises.css" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Jacques+Francois' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+
+<div id="container">
+  <div id="exercise">
+    <p></p>
+    <h2>Excel Lab: the Process of Turning Numbers into Pictures</h2>
+
+    <p>We're going to be recreating an example from Ben Fry's <a href="http://lenagroeger.s3.amazonaws.com/newschool/benfry.pdf">Computational Information Design</a>, following his described "path from data to understanding." </p>
+    <img src="dataprocess.jpg">
+    <p>Let's start from the beginning.</p>
+    <h3 class="first-step"><span>acquire</span>  parse  filter  mine  represent  refine  interact</h3>
+
+    <p>1. Go to <a href="http://federalgovernmentzipcodes.us/" target="_blank">this free zip code database</a> </p>
+
+    <p>2. Download the first link here, called "All Locations (Multiple locations for some zipcodes)."</p>
+      <img src="screen1a.jpg">
+
+    <h3>acquire <span>parse</span>   filter  mine  represent  refine  interact</h3>
+
+    <p>3. You should be able to open your newly downloaded CSV file in Excel. (<a href="http://en.wikipedia.org/wiki/Comma-separated_values">What's a CSV?</a>) You should end up with a spreadsheet of zip codes, cities, states, lat/long, etc. If this were a <a href="http://en.wikipedia.org/wiki/Tab-separated_values">TSV file</a> the parsing step would be only a tiny bit more complicated. If it were a PDF, there would be tears.</p> <img src="screen1.jpg">
+
+    <h3>acquire parse  <span>filter</span>   mine  represent  refine  interact</h3>
+    <p>4. First we're going to filter this data to make it a bit more manageable. Go to Data> Filter </p> <img src="screen2.jpg">
+
+
+    <p>5. You should get a black pop-up box like this.  </p> <img src="screen3.jpg">
+    <p>6. Uncheck "Select All," and then scroll down til you find "NY." Check just that one.</p> <img src="screen4.jpg">
+    <h3>acquire parse filter  <span>mine</span>  represent  refine  interact</h3>
+
+    <p>7. Now we only have the zip codes in New York! Great. But we are really just interested in the latitude and longitude columns. Copy those two columns and paste them into a new sheet.</p> <img src="screen5.jpg">
+<br>
+    <h3>acquire parse filter  mine <span> represent</span>refine  interact</h3>
+
+    <p>8. So since zip codes are just points in space, let's chart these points and see what we get. Go to Insert > Chart. </p> <img src="screen6.jpg">
+    <p>9. A bunch of options should appear below. Click on the Scatter category, and then "Marked Scatter."</p> <img src="screen7.jpg">
+    <p>10. Oh dear. What is THAT?! </p> <img src="screen8.jpg">
+    <p>11. This is how visualization can be a good indicator that something is wrong with your data. Let's see what that weird outlier is in the top left corner. Go to Data> Sort. Sort in Descending and then Ascending. </p> <img src="screen9.jpg">
+    <p>12. Huh! Looks like while every other longitude point in New York is negative 70 something, this is positive. Seems wrong, right? </p> <img src="screen10.jpg">
+    <p>13. Well, if we mapped these coordinates on Google Maps we'd end up in Kyrgystan, so yeah, it's wrong. </p> <img src="screen11.jpg">
+    <p>14. Obviously if you were wrangling with this data for a real story, you'd want to make some phone calls and figure out why these bad values exist and what the real ones were. But for our purposes, we'll just change them to negative values. Add a minus sign in front of the first number, and then click and drag down the little box in the bottom right to change all the rest. </p> <img src="screen12.jpg">
+    <h3>acquire parse filter  mine  represent <span>refine</span>  interact</h3>
+    <p>15. OK! This is starting to look better. But something is still wrong with our map. </p> <img src="screen13.jpg">
+    <p>16. It's flipped! That's because it's plotting latitude and longitude on the wrong axis. To fix this, let's switch the order. Select the Lat column and paste it to the right of the Long column. </p> <img src="screen14.jpg">
+    <p>17. Now selecting those two new columns, make a new chart. </p> <img src="screen15.jpg">
+    <p>18. There it is! A unprojected map of New York! </p> <img src="screen16.jpg">
+
+    <p>19. Now, can you make a map of the U.S. this way? What else would you need to filter out? (Hint: this zip code data contains more than the 48 contiguous states.)
+
+    <p>20. Finally, why is this an *extremely* problematic map? Can we really convert latitude and longitude to X/Y coordinates on a flat surface? What are map projections, really?</p>
+
+    <p><b>Did You Know?</b> Zip codes, as we have seen, are literal points in space, not geographic areas. <a href="https://www.census.gov/geo/reference/zcta/zcta_delin_anim.html">Here's how the census</a> turns those zip codes into a geographic entities. </p>
+
+  </div>
+</div>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

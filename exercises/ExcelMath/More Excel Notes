@@ -1,0 +1,53 @@
+How to Make Visuals
+http://app.raw.densitydesign.org/
+http://www.datavisu.al/
+
+
+http://www.cpsc.gov/cgibin/NEISSQuery/home.aspx
+
+http://www.cpsc.gov//Global/Neiss_prod/completemanual%20.pdf
+
+http://www.theguardian.com/news/datablog/2009/mar/10/how-to-export-data
+http://www.data.gov/
+http://www.data.gov/open-gov/
+
+
+Let's work on this age column. What could it possibly mean???
+
+Here is the explanation:
+
+When the date of birth is not available, the age of the patient must be
+entered. For children under two years old, record the age in months.
+To show that the age is in months instead of years, put a "2" in the first
+space of the age code. Code the age of infants in "completed months;"
+e.g., code the age of infants who are four to seven weeks old as one
+month. Code the age of infants who are less than one month old as
+one month.
+Examples:
+Age Code
+Three weeks 201
+Four weeks (one month) 201
+Seven weeks 201
+Ten weeks 202
+Nine months 209
+Twelve months (one year) 212
+Eighteen months 218
+For a patient two years of age or older, record age in years.
+
+
+Number of Months
+=IF(I2>200,(I2-200)&"m",I2)
+
+Years as a Decimal
+=IF(I2>200,(I2-200)/12,I2)
+
+Round it!
+=IF(I2>200,ROUND((I2-200)/12,0),I2)
+
+
+Now, what's the Mean?
+=AVERAGE(H:H)
+Media?
+=MEDIAN(H:H)
+Mode?
+=MODE(H:H)
